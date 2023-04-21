@@ -23,7 +23,7 @@ class cub
 
   private:
 
-      void quad( int a, int b, int c, int d );
+      void quad( int a, int b, int c );
 
       int a; // amplada
       int h; // alcada
