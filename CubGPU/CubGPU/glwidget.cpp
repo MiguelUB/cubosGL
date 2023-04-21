@@ -123,7 +123,7 @@ void GLWidget::setZRotation(int angle)
     }
 }
 
-
+// Core para el grafico, se llama automaticamente?
 void GLWidget::initializeGL()
 {
 
@@ -148,6 +148,7 @@ void GLWidget::initializeGL()
 
 }
 
+// Este metodo se allama automaticamente cada vez que la ventana se refresca, como cuando se cambia el angulo de vision
 void GLWidget::paintGL()
 {
 
@@ -163,7 +164,7 @@ void GLWidget::paintGL()
 
 }
 
-
+// Metodo que se llama automatico cada vez que se cambia el tamaño de la ventana
 void GLWidget::resizeGL(int width, int height)
 {
     int side = qMin(width, height);

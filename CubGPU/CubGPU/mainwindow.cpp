@@ -8,11 +8,14 @@ MainWindow::MainWindow() {
     glfModern.setSampleBuffers(true);
     glfModern.setSwapInterval(0);
     glfModern.setDefaultFormat(glfModern);
+    // Este es el que crea la ventana del widget
     glWidget = new GLWidget(glfModern);
 
     xSlider = createSlider();
     ySlider = createSlider();
     zSlider = createSlider();
+
+    // Como heredamos del QTWidget podemos usar
 
     connect(xSlider, SIGNAL(valueChanged(int)), glWidget, SLOT(setXRotation(int)));
     connect(glWidget, SIGNAL(xRotationChanged(int)), xSlider, SLOT(setValue(int)));
