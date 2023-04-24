@@ -59,10 +59,11 @@ void cub::make()
     qDebug() << "Estic en el make del cub\n";
     // generacio de la geometria dels triangles per a visualitzar-lo
     Index = 0;
-    quad( 2, 3, 0);
-    quad( 2, 1, 0);
-    quad( 0, 1, 3);
-    quad( 3, 2, 1);
+    // Los triangulos deben ir en sentido antihorario y fijarse la normal
+    quad( 1,2,3);
+    quad( 0,2,1);
+    quad( 3,2,0);
+    quad( 0,1,3);
 
 
 
@@ -104,7 +105,7 @@ void cub::toGPU(QGLShaderProgram *program){
 // Pintat dels arrays definits del cub: activació del pipeline de GL
 void cub::draw()
 {
-   glDrawArrays( GL_TRIANGLE_FAN, 0, NumVertices );
+   glDrawArrays( GL_TRIANGLES, 0, NumVertices );
 }
 
 void cub::aplicaTG(mat4 m)
